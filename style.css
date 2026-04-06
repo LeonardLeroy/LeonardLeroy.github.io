@@ -169,19 +169,57 @@ h1 {
 .view-link:hover { background: var(--text); color: var(--bg); }
 
 /* --- FOOTER --- */
-.footer-contact .section-label {
-    text-align: left;
-    width: 100%;
+.footer-contact { 
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    /* On ne touche PAS au padding gauche/droite pour laisser le .container faire son job */
 }
-.footer-contact { padding: 4rem 0 6rem 0; text-align: center; }
-.glitch-text:hover { animation: btn-glitch 0.3s linear infinite; color: var(--accent); cursor: default; }
-.links { margin-top: 2rem; font-size: 1.1rem; }
-.links a { color: var(--text); text-decoration: none; font-weight: bold; font-family: var(--font-mono); transition: 0.3s; }
-.links a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+
+/* Le centrage est appliqué UNIQUEMENT au contenu, pas à la section entière */
+.contact-wrap {
+    text-align: center;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.glitch-text {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-family: var(--font-mono);
+}
+
+.glitch-text:hover { 
+    animation: btn-glitch 0.3s linear infinite; 
+    color: var(--accent); 
+    cursor: default; 
+}
+
+.links { 
+    margin-top: 2rem; 
+    font-size: 1.1rem; 
+}
+
+.links a { 
+    color: var(--text); 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-family: var(--font-mono); 
+    transition: 0.3s; 
+}
+
+.links a:hover { 
+    color: var(--accent); 
+    text-shadow: 0 0 10px var(--accent); 
+}
 
 .footer-bottom { 
-    display: flex; justify-content: space-between; padding: 2.5rem 0;
-    font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim);
+    display: flex; 
+    justify-content: space-between; 
+    padding: 2.5rem 0;
+    font-family: var(--font-mono); 
+    font-size: 0.7rem; 
+    color: var(--text-dim);
     border-top: 1px solid #1a1a1f;
 }
 .online { color: #00ff66; text-shadow: 0 0 5px #00ff66; font-weight: bold; }
@@ -363,7 +401,8 @@ h1 {
     }
 
     .footer-contact {
-        padding: 6rem 0;
-        margin-top: 4rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        margin-top: 2rem;
     }
 }
