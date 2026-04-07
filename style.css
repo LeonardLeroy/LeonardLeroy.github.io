@@ -1,8 +1,7 @@
-/* --- VARIABLES --- */
 :root {
     --bg: #0a0a0c;
     --surface: #121217;
-    --accent: #ff0055; /* Rose Sakura Néon */
+    --accent: #ff0055;
     --accent-blue: #00f0ff;
     --text: #e1e1e6;
     --text-dim: #88888b;
@@ -10,7 +9,6 @@
     --font-sans: 'Inter', sans-serif;
 }
 
-/* --- RESET & BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -22,7 +20,6 @@ body {
 }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
-/* --- ANIMATION : GRAIN ANALOGIQUE --- */
 .grain {
     position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
     background: url('https://grainy-gradients.vercel.app/noise.svg');
@@ -36,7 +33,6 @@ body {
     100% { transform: translate(5%,0); }
 }
 
-/* --- NAVBAR & LOGO --- */
 header { padding: 2.5rem 0; }
 .nav-box { display: flex; justify-content: space-between; align-items: center; }
 .brand { font-family: var(--font-mono); font-weight: bold; letter-spacing: -1px; font-size: 1.1rem; }
@@ -51,7 +47,6 @@ nav a {
 }
 nav a:hover { color: var(--accent); text-shadow: 0 0 8px var(--accent); }
 
-/* --- HERO SECTION --- */
 .hero { padding: 6rem 0; position: relative; }
 .kicker { color: var(--accent); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 2px; }
 h1 { 
@@ -81,7 +76,6 @@ h1 {
     text-shadow: 0 0 5px rgba(225, 225, 230, 0.2);
 }
 
-/* --- BOUTONS --- */
 .btn-group { display: flex; gap: 1.2rem; flex-wrap: wrap; }
 .btn-primary { 
     background: var(--accent); color: white; padding: 1.1rem 2.2rem; 
@@ -104,7 +98,6 @@ h1 {
     100% { transform: translate(0); }
 }
 
-/* --- SECTIONS --- */
 .section-label { 
     font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);
     margin-bottom: 3.5rem; border-top: 1px solid #1a1a1f; padding-top: 1.5rem;
@@ -152,7 +145,6 @@ h1 {
     box-shadow: 0 5px 15px rgba(255, 0, 85, 0.1);
 }
 
-/* --- LISTE PROJETS --- */
 .project-item {
     display: flex; align-items: center; padding: 2.2rem 0;
     border-bottom: 1px solid #1a1a1f; transition: 0.4s ease;
@@ -168,14 +160,11 @@ h1 {
 }
 .view-link:hover { background: var(--text); color: var(--bg); }
 
-/* --- FOOTER --- */
 .footer-contact { 
     padding-top: 4rem;
     padding-bottom: 6rem;
-    /* On ne touche PAS au padding gauche/droite pour laisser le .container faire son job */
 }
 
-/* Le centrage est appliqué UNIQUEMENT au contenu, pas à la section entière */
 .contact-wrap {
     text-align: center;
     margin-top: 5rem;
@@ -224,22 +213,16 @@ h1 {
 }
 .online { color: #00ff66; text-shadow: 0 0 5px #00ff66; font-weight: bold; }
 
-/* =========================================
-   AJOUTS NIGHT CITY HOLOS (SECTION HERO)
-   ========================================= */
-
-/* --- LAYOUT GRID POUR LE HERO --- */
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr; /* Texte large, Holos plus étroits */
+    grid-template-columns: 1.5fr 1fr;
     gap: 2rem;
     align-items: center;
 }
 
-/* --- ZONE HOLOGRAPHIQUE --- */
 .holo-zone {
     position: relative;
-    height: 400px; /* Hauteur de la zone d'animation */
+    height: 400px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -247,7 +230,6 @@ h1 {
     pointer-events: none;
 }
 
-/* --- 2. PANNEAUX PUBLICITAIRES VERTICAUX --- */
 .ads-container {
     position: absolute;
     right: 20px;
@@ -261,38 +243,36 @@ h1 {
 }
 
 .ad-panel {
-    writing-mode: vertical-rl; /* Texte vertical */
+    writing-mode: vertical-rl;
     text-transform: uppercase;
     padding: 15px 5px;
     border: 1px solid rgba(255,255,255,0.1);
     background: rgba(0,0,0,0.5);
     backdrop-filter: blur(2px);
-    opacity: 0; /* Caché par défaut */
+    opacity: 0;
     animation: adAppear 15s linear infinite, adGlitch 0.5s linear infinite;
-    animation-delay: calc(var(--ad-delay) * 1s); /* Délai aléatoire */
+    animation-delay: calc(var(--ad-delay) * 1s);
 }
 
-/* Styles spécifiques pour chaque panneau (Couleurs Cyber) */
 .ad-1 { 
     --ad-delay: 0;
-    color: var(--accent-blue); /* Cyan */
+    color: var(--accent-blue);
     border-color: var(--accent-blue);
     box-shadow: 0 0 10px rgba(0,240,255,0.3);
 }
 .ad-2 { 
-    --ad-delay: 5; /* Apparaît après 5s */
-    color: #f3e600; /* Jaune Cyberpunk */
+    --ad-delay: 5;
+    color: #f3e600;
     border-color: #f3e600;
     box-shadow: 0 0 10px rgba(243,230,0,0.3);
 }
 .ad-3 { 
-    --ad-delay: 10; /* Apparaît après 10s */
-    color: #ff003c; /* Rouge N54 News */
+    --ad-delay: 10;
+    color: #ff003c;
     border-color: #ff003c;
     box-shadow: 0 0 10px rgba(255,0,60,0.3);
 }
 
-/* Keyframes : Apparition et défilement vertical */
 @keyframes adAppear {
     0% { opacity: 0; transform: translateY(50px) scaleX(0); }
     5%, 25% { opacity: 0.8; transform: translateY(0) scaleX(1); }
@@ -300,7 +280,6 @@ h1 {
     100% { opacity: 0; transform: translateY(-50px) scaleX(0); }
 }
 
-/* Keyframes : Glitch Néon subtil (Scintillement) */
 @keyframes adGlitch {
     0%, 100% { opacity: 1; text-shadow: none; }
     50% { opacity: 0.8; text-shadow: 0 0 5px currentColor; }
@@ -308,30 +287,23 @@ h1 {
     52% { opacity: 0.9; text-shadow: none; }
 }
 
-/* =========================================
-   >>> SECTION RESPONSIVE UNIFIÉE <<<
-   ========================================= */
-
-/* --- TABLETTES (Écrans < 900px) --- */
 @media (max-width: 900px) {
     .hero-grid {
-        grid-template-columns: 1fr; /* Une seule colonne */
+        grid-template-columns: 1fr;
     }
     .holo-zone {
-        display: none; /* Cache les animations complexes */
+        display: none;
     }
     #hero {
         padding: 6rem 0 4rem 0;
     }
 }
 
-/* --- ADAPTATION MOBILE ET PETITES TABLETTES (Écrans < 768px) --- */
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
     }
 
-    /* Header : nom et menu en colonne */
     .nav-box {
         flex-direction: column;
         gap: 15px;
@@ -339,10 +311,9 @@ h1 {
     }
 
     nav {
-        display: none; /* Cache le menu desktop */
+        display: none;
     }
 
-    /* Hero Section unifiée */
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
@@ -350,35 +321,30 @@ h1 {
     }
 
     h1 {
-        font-size: 2.5rem; /* Réduit le titre */
+        font-size: 2.5rem;
     }
 
     .kicker {
         font-size: 0.7rem;
     }
 
-    /* --- ICI --- CACHE LES 3 PANNEAUX PUBS CYBERPUNK --- */
     .ads-container {
-        display: none; /* C'est cette ligne qui fait la magie ! */
+        display: none;
     }
 
-    /* Cache aussi toute la zone holo */
     .holo-zone {
-        display: none !important; /* Force la disparition */
+        display: none !important;
     }
-    /* ----------- */
 
     .vertical-text {
         display: none;
     }
 
-    /* Bio & Skills : empile les cartes */
     .about-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    /* Projets : ajuste l'affichage */
     .project-item {
         flex-direction: column;
         align-items: flex-start;
@@ -387,7 +353,7 @@ h1 {
     }
 
     .view-link {
-        align-self: flex-end; /* Bouton SRC_CODE à droite */
+        align-self: flex-end;
     }
 
     .btn-group {
