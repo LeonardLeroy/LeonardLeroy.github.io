@@ -252,6 +252,7 @@ h1 {
     opacity: 0;
     animation: adAppear 15s linear infinite, adGlitch 0.5s linear infinite;
     animation-delay: calc(var(--ad-delay) * 1s);
+    animation-fill-mode: both;
 }
 
 .ad-1 { 
@@ -281,10 +282,10 @@ h1 {
 }
 
 @keyframes adGlitch {
-    0%, 100% { opacity: 1; text-shadow: none; }
-    50% { opacity: 0.8; text-shadow: 0 0 5px currentColor; }
-    51% { opacity: 1; text-shadow: 2px 0 var(--accent-blue), -2px 0 #ff00ff; }
-    52% { opacity: 0.9; text-shadow: none; }
+    0%, 100% { text-shadow: none; }
+    50% { text-shadow: 0 0 5px currentColor; }
+    51% { text-shadow: 2px 0 var(--accent-blue), -2px 0 #ff00ff; }
+    52% { text-shadow: none; }
 }
 
 @media (max-width: 900px) {
